@@ -1,0 +1,265 @@
+/*!--
+name:Natalia Smith
+date: 1/31/2023
+course name: IT202 section 004
+assignment name: Unit 3 Assignment
+email: nrs5@njit.edu.
+CSS sheet.
+-->
+*/
+h1 {
+  /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+*/
+  color: rgb(0, 0, 0);
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-style: double;
+  padding: 1%;
+  font-size: 2rem;
+  height: auto;
+  width: auto;
+  line-height: 1;
+
+  text-align: center;
+
+}
+
+main {
+  color: rgb(0, 0, 0);
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  height: auto;
+  width: auto;
+
+  text-align: center;
+}
+
+.started {
+  font-style: italic;
+  text-align: center;
+  height: auto;
+  width: auto;
+}
+
+p {
+  bottom: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #121413;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
+img {
+  border: 2px solid #e3b11c;
+  border-radius: 40px;
+  padding: 10px;
+  height: 50%;
+  position: relative;
+  width: 250px;
+
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
+.logo {
+  margin-left: 1em;
+  margin-top: 3em;
+  width: fit-content;
+
+}
+
+footer {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+}
+
+figure {
+  height: auto;
+  width: auto;
+}
+
+.copyright {
+  position: absolute;
+  width: 100%;
+  color: #000000;
+  font-size: 1em;
+  text-align: center;
+  bottom: 0;
+}
+
+
+.address {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+}
+
+#street {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 18px;
+}
+
+.street2 {
+  position: absolute;
+  top: 70px;
+  right: 5px;
+  font-size: 18px;
+}
+
+.home {
+  position: absolute;
+  top: 60px;
+  nav-left: 16px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #F49D6E;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #EDCB96;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  height: auto;
+  width: auto;
+}
+
+header {
+  width: auto;
+  height: auto;
+}
+
+li a:hover {
+  background-color: #832525;
+}
+
+.active {
+  background-color: #af984c;
+}
+
+form {
+  text-align: center;
+
+}
+
+.submit:hover {
+  background-color: #1ac122;
+}
+
+.error_message {
+  border-style: double;
+  border-width: 2px;
+  border-color: red;
+}
+
+.fromAddress {
+  top: 10px;
+  right: 5px;
+  text-align: left;
+  line-height: 1em;
+  text-align: center;
+
+}
+
+.fromTest {
+  line-height: 2em;
+
+}
+
+.toAddress {
+  left: 0px;
+  text-align: center;
+}
+
+.packageInfo {
+  text-align: center;
+}
+
+.trackingNum {
+  text-align: center;
+}
+
+.thanks {
+  border-style: double;
+
+  border: #e3b11c;
+}
+
+.recipient {
+  border-style: double;
+  border: #e3b11c;
+
+}
+
+input {
+  width: 300px;
+  
+}
+
+
+tr,th, td {
+  padding: 15px;
+  text-align: center;
+}
+tr:hover {background-color: coral;}
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+td {
+  text-align: center;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h4{
+  text-align: center;
+  font-size: 1.5rem;
+
+}
+table, th, td {
+  border: 1px solid;
+}
+
+.labelClass{
+  width: 500px;
+}
+.reset:hover {
+  background-color: #db2f1c;
+}
