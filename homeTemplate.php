@@ -24,16 +24,17 @@
         <li><a href="create.php">Create</a></li>
         <?php 
   session_start();
-  if (isset($_SESSION['is_valid_admin'])) { 
-?>
- 
-      <li><a href="logout.php">Logout</a></li>
- 
-  <?php } else { ?>
-
-      <li><a href="login.php">Login</a></li>
-
-  <?php } ?>
+  if (empty($_SESSION['is_valid_admin'])) { //is null
+    ?>
+   
+        <li><a href="login.php">Login</a></li> 
+   
+    <?php } else { ?>
+  
+        <li><a href="logout.php">Logout</a></li>
+  
+    <?php } 
+      ?>
         <header>
     </ul>
 

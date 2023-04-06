@@ -50,7 +50,8 @@ if (!isset($shipDate)) {
 
     include("formInput.php"); //this page contains the forms for user input. 
     //session_start();
-    if (!isset($_SESSION['is_valid_admin'])) {
+    if (empty($_SESSION['is_valid_admin'])) { //value is null
+  
         header("Location: login.php" );
     }
     ?>

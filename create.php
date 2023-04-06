@@ -35,21 +35,22 @@ This page is just a template/db connection page.
         <li><a href="create.php">Create</a></li>
         <?php 
   session_start();
-  if (isset($_SESSION['is_valid_admin'])) { 
-?>
- 
-      <li><a href="logout.php">Logout</a></li>
- 
-  <?php } else { ?>
+  if (empty($_SESSION['is_valid_admin'])) { //is null
+    header("Location: login.php" );
 
-      <li><a href="login.php">Login</a></li>
-
-  <?php } ?>
+    ?>
+   
+        <li><a href="login.php">Login</a></li> 
+   
+    <?php } else { ?>
+  
+        <li><a href="logout.php">Logout</a></li>
+  
+    <?php } 
+      ?>
         <header>
     </ul>
 
-        <header>
-    </ul>
         <header>
     </ul>
     

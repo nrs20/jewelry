@@ -97,7 +97,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
                 <td>Name</td>
                 <td>Description</td>
                 <td>Price</td>
-                <?php if (isset($_SESSION['is_valid_admin'])) : ?>            
+                <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
                         <td>Delete Item</td>
 
 <?php endif; ?>
@@ -113,7 +113,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
     <td><?php echo $product['description']; ?></td>
     <td><?php echo $product['price']; ?></td>
     <!--<td><a href="delete.php id=">Delete</a></td>-->
-    <?php if (isset($_SESSION['is_valid_admin'])) : ?>
+    <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
     <td>
     <form action='delete.php?name="<?php echo $product['jewelryCode']; ?>"' method="post">
         <input type="hidden" name="name" value="<?php echo $product['jewelryCode']; ?>">
@@ -141,7 +141,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
                 <td>Name</td>
                 <td>Description</td>
                 <td>Price</td>
-                <?php if (isset($_SESSION['is_valid_admin'])) : ?>            
+                <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
                         <td>Delete Item</td>
 
 <?php endif; ?>
@@ -155,7 +155,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
     <td><?php echo $product['jewelryName']; ?></td>
     <td><?php echo $product['description']; ?></td>
     <td><?php echo $product['price']; ?></td>
-    <?php if (isset($_SESSION['is_valid_admin'])) : ?>
+    <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
     <td>
     <form action='delete.php?name="<?php echo $product['jewelryCode']; ?>"' method="post">
         <input type="hidden" name="name" value="<?php echo $product['jewelryCode']; ?>">
@@ -181,7 +181,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
                 <td>Name</td>
                 <td>Description</td>
                 <td>Price</td>
-                <?php if (isset($_SESSION['is_valid_admin'])) : ?>            
+                <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
                         <td>Delete Item</td>
 
 <?php endif; ?>
@@ -196,7 +196,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
     <td><?php echo $product['jewelryName']; ?></td>
     <td><?php echo $product['description']; ?></td>
     <td><?php echo $product['price']; ?></td>
-    <?php if (isset($_SESSION['is_valid_admin'])) : ?>
+    <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
     <td>
     <form action='delete.php?name="<?php echo $product['jewelryCode']; ?>"' method="post">
         <input type="hidden" name="name" value="<?php echo $product['jewelryCode']; ?>">
@@ -222,7 +222,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
                 <td>Name</td>
                 <td>Description</td>
                 <td>Price</td>
-                <?php if (isset($_SESSION['is_valid_admin'])) : ?>            
+                <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
                         <td>Delete Item</td>
 
 <?php endif; ?>
@@ -236,7 +236,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
     <td><?php echo $product['jewelryName']; ?></td>
     <td><?php echo $product['description']; ?></td>
     <td><?php echo $product['price']; ?></td>
-    <?php if (isset($_SESSION['is_valid_admin'])) : ?>
+    <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
     <td>
     <form action='delete.php?name="<?php echo $product['jewelryCode']; ?>"' method="post">
         <input type="hidden" name="name" value="<?php echo $product['jewelryCode']; ?>">
@@ -261,7 +261,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
                 <td>Name</td>
                 <td>Description</td>
                 <td>Price</td>
-                <?php if (isset($_SESSION['is_valid_admin'])) : ?>            
+                <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
                         <td>Delete Item</td>
 
 <?php endif; ?>                
@@ -275,7 +275,7 @@ $pendantInfoResult = $pendantInfo->fetchAll();
     <td><?php echo $product['jewelryName']; ?></td>
     <td><?php echo $product['description']; ?></td>
     <td><?php echo $product['price']; ?></td>
-    <?php if (isset($_SESSION['is_valid_admin'])) : ?>
+    <?php  if (!empty($_SESSION['is_valid_admin'])) : //is not null : ?>
     <td>
     <form action='delete.php?name="<?php echo $product['jewelryCode']; ?>"' method="post">
         <input type="hidden" name="name" value="<?php echo $product['jewelryCode']; ?>">
@@ -292,4 +292,3 @@ $pendantInfoResult = $pendantInfo->fetchAll();
     <p class="copyright">Copyright &copy; 1960 - 2023 Squilliam. All rights reserved. </p>
   </footer>
         </main>
-    </body>

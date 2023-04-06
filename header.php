@@ -22,7 +22,7 @@ This page should include the name of your jewelry store,
 <body style="background-color:#F5D6BA">
   <img class="logo" src="images/squill.jpg" alt="Squilliam's Jewels">
   <h1 class="correct" display:inline>Squilliam's Jewels</h1>
-  <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"> Our Products: </p>
+  <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif"> </p>
   <?php 
  
  if (isset($_SESSION['is_valid_admin']) && $_SESSION['is_valid_admin'] == true) { 
@@ -50,16 +50,22 @@ This page should include the name of your jewelry store,
         <li><a href="shipping.php">Place Order</a></li>
         <li><a href="create.php">Create</a></li>
         <?php 
-  if (isset($_SESSION['is_valid_admin'])) { 
-?>
-    
-      <li><a href="logout.php">Logout</a></li>
-    
-  <?php } else { ?>
+ 
+ if (empty($_SESSION['is_valid_admin'])) { //is null
+  ?>
  
       <li><a href="login.php">Login</a></li>
+ 
+  <?php } else { ?>
 
-  <?php } ?>
+      <li><a href="logout.php">Logout</a></li>
+
+  <?php } 
+     
+  //session_start();
+  //echo "<pre>";
+  //print_r($_SESSION);
+  ?>
         <header>
     </ul>
   

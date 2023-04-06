@@ -8,25 +8,7 @@ This page contains the is_valid_admin function which determines whther or not th
 -->
 <?php
     function add_jewelry_manager($email, $password, $firstName, $lastName) {
-        $dsn = 'mysql:host=localhost;dbname=jewelry_store';
-        $username = 'root';
-        $password = '';
-    
-        try
-        {
-            $db = new PDO($dsn, $username, $password);
-                    //include('header.php'); //success page
-                   // include('products.php'); //table page
-        }
-        catch (PDOException $exception)
-        {
-           // include('headerError.php'); //error page
-            $error_message = $exception->getMessage();
-            echo "$error_message";
-            
-            exit();
-        }
-        //$db = getDB();
+        $db = getDB();
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $query = 'INSERT INTO jewelryManagers (emailAddress, password, firstName, lastName)
                   VALUES (:email, :password, :firstName, :lastName)';
@@ -38,8 +20,25 @@ This page contains the is_valid_admin function which determines whther or not th
         $statement->execute();
         $statement->closeCursor();
     }
-    add_jewelry_manager("kylerPhillips22@gmail.com","pk90321", "Kyler", "Phillips");
-    add_jewelry_manager("johnSanchez092@gmail.com","sammy&#2h", "John","Sanchez");
+    //add_jewelry_manager("kylerPhillips22@gmail.com","pk90321", "Kyler", "Phillips");
+    $emails = ["kylerPhillips22@gmail.com","johnSanchez092@gmail.com","phillipOntario@gmail.com"];
+    $passwords = ["s3sme","no","yes"];
+    $firstNames = ["Kyler","John","Phillip"];
+    $lastNames = ["Phillips", "Sanchez", "Ontario"];
 
-    add_jewelry_manager("phillipOntario@gmail.com","kermitbcsh3643","Phillip","Ontario");
+    for($x = 0; $x<3; $x+=1)
+    {
+        add_jewelry_manager($emails[$x], $passwords[$x], $firstNames[$x], $lastNames[$x]);
+    }
+    /*
+    add_jewelry_manager("kylerPhillips22@gmail.com","s3sme", "Kyler", "Phillips");
+
+    //add_jewelry_manager("johnSanchez092@gmail.com","sammy&#2h", "John","Sanchez");
+
+    add_jewelry_manager("johnSanchez092@gmail.com","s3sme", "John","Sanchez");
+
+    //add_jewelry_manager("phillipOntario@gmail.com","kermitbcsh3643","Phillip","Ontario");
+
+    add_jewelry_manager("phillipOntario@gmail.com","s3sme","Phillip","Ontario");
+    */
 ?>

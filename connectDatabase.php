@@ -9,17 +9,15 @@ This page connects to the SQL database
 */
 //require_once('authenticate.php');
 session_start();
-//if (!isset($_SESSION['is_valid_admin'])) {
- //   header("Location: login.php" );
-//}
+
 
     $dsn = 'mysql:host=localhost;dbname=jewelry_store';
     $username = 'root';
-    $password = '';
+    $dbpassword = '';
 
     try
     {
-        $db = new PDO($dsn, $username, $password);
+        $db = new PDO($dsn, $username, $dbpassword);
                 include('header.php'); //success page
                 include('products.php'); //table page
     }

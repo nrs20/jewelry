@@ -24,12 +24,17 @@ This page should include the name of your jewelry store,
   <h1 class="correct" display:inline>Squilliam's Jewels</h1>
   <?php 
  
- if (isset($_SESSION['email'])) { 
+ if (empty($_SESSION['is_valid_admin'])) { //is null
+  
 ?>
+<p> <i><?php echo "Empty!!!!";?></p></i>
 
+
+ <?php } else { ?>
 <p> <i><?php echo "Welcome, ".  $_SESSION['fName'] . "  " . $_SESSION['Lname'];?></p></i>
   <p> <?php echo "( " . $_SESSION['email'] . " ) ";?></p>
- <?php } else { ?>
+  <p> <?php echo "( " . $_SESSION['passGiven'] . " ) ";?></p>
+  <p> <?php echo "( " . $_SESSION['emailGiven'] . " ) ";?></p>
 
   
 
@@ -37,7 +42,7 @@ This page should include the name of your jewelry store,
     
  //session_start();
  //echo "<pre>";
- //print_r($_SESSION);
+ print_r($_SESSION);
  ?>
 
   
@@ -59,14 +64,14 @@ This page should include the name of your jewelry store,
         <li><a href="create.php">Create</a></li>
         <?php 
  
-  if (isset($_SESSION['is_valid_admin'])) { 
-?>
+ if (empty($_SESSION['is_valid_admin'])) { //is null
+  ?>
  
-      <li><a href="logout.php">Logout</a></li>
+      <li><a href="login.php">Login</a></li>
  
   <?php } else { ?>
 
-      <li><a href="login.php">Login</a></li>
+      <li><a href="logout.php">Logout</a></li>
 
   <?php } 
      

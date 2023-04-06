@@ -6,44 +6,58 @@ assignment name: Unit 9 Assignment
 email: nrs5@njit.edu.
 This page contains the is_valid_admin function which determines whther or not the login was successful. 
 -->
+<?php
 
- <?php
+require_once('database.php');
 
-    function is_valid_admin_login($email, $password)
-    {
-        $dsn = 'mysql:host=localhost;dbname=jewelry_store';
-        $username = 'root';
-        $password = '';
+function is_valid_admin_login($email, $password)
+{
+    $db = getDB();
+    $query = 'SELECT password FROM jewelryManagers
+    WHERE emailAddress = :email';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':email', $email);
+  $statement->execute();
+  $row = $statement->fetch();
+  $statement->closeCursor(); 
 
-        try {
-            $db = new PDO($dsn, $username, $password);
-        } catch (PDOException $exception) {
-            $error_message = $exception->getMessage();
-            echo "$error_message";
+if( $row== false)
+{
+  $_SESSION['is_valid_admin'] = false;
 
-            exit();
-        }
-        $query = 'SELECT password, firstName, lastName FROM jewelrymanagers
-              WHERE emailAddress = :email';
-        $statement = $db->prepare($query);
-        $statement->bindValue(':email', $email);
-        $statement->execute();
-        $row = $statement->fetch();
-        if ($row == 0) {
-            // row not found, fail out and try login again
-            header("Location: loginFail.php");
+return false;
+}
+else
+{
+  $hash = $row['password'];
+  if (password_verify($password,$hash)){
+    session_start();
+    $_SESSION['is_valid_admin'] = true;
 
-            return 0;
-        }
-        // successful login
-        else {
-            $statement->closeCursor();
-            $hash = $row['password'];
-            $_SESSION['fName'] = $row['firstName'];
-            $_SESSION['Lname'] = $row['lastName'];
-            $_SESSION['email'] = $email;
+  }
+}
+}
 
-            return password_verify($password, $hash);
-        }
-    }
-    ?>
+
+/*
+ // successful login
+
+   // if (password_verify($password, $row['password'])) {
+       // $_SESSION['pass'] = $password . "poop";
+
+      // $_SESSION['fName'] = $row['firstName'];
+        //$_SESSION['lName'] = $row['lastName'];
+        //$_SESSION['email'] = $email;
+       // $statement->closeCursor();
+      //  return true;
+   // }
+   // else {
+        // incorrect password, fail out and try login again
+        //header("Location: loginFail.php");
+      //  return false;
+   // }
+
+//?>
+*/
+?>
+   
